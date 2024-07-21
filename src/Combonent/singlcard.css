@@ -1,0 +1,211 @@
+.card {
+
+  /* display: flex; */
+  align-items: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 500px;
+  height: 100vh;
+  /* border-radius:  0 0 5px; */
+  background-image: linear-gradient(60deg, #091428, #1c52bc, #96bef7);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+@media (  max-width : 768px){
+.card{
+  /* width: 400px; */
+  width: 100%;
+}
+}
+.cardcontainer {
+  display: flex;
+ flex-direction: column;
+align-items: center;
+ gap: 20px;
+/* margin-top: 50px; */
+}
+.controle{
+
+}
+.controle  button{
+    width: 150px;
+}
+.controle > button:last-of-type{
+    width: 100%;
+}
+.controle{
+  position: absolute;
+  top: 60%;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+ /* margin-top: 300px; */
+}
+@media (  min-width : 768px) {
+ 
+    
+}
+.cardimg {
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  /* margin-left: 50px; */
+   transform: translatex(-50%);
+  /* top: 50%;  */
+  border-radius: 6px;
+ 
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 30px 20px 10px rgba(0, 0, 0, 0.3);
+ 
+}
+
+.ncardimg {
+position: relative;
+  width: 200px;
+  border-radius: 50%;
+  /* margin-left: 50px; */
+  overflow: hidden;
+  transition: 0.5s;
+  filter: grayscale(50%);
+
+  animation: rot 30s linear infinite, popup 2s infinite 3s;
+  pointer-events: none;
+  box-shadow: rgba(50, 50, 51, 0.324);
+}
+@keyframes rot {
+    to {
+      transform: rotate(360deg);
+    
+    }
+  }
+.n2cont{
+    position: absolute;
+  left: 50%;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: translatex(-50%);
+    /* height: fit-content; */
+    transition: 0.5s;
+    filter: grayscale(50%);
+    
+    animation:paused ;
+ 
+    
+}
+.effecs{
+    position: relative;
+width: fit-content;
+height: fit-content;
+}
+.effecs::before{
+ content: "";
+ position: absolute;
+ /* transform: translate(-50% , -50%); */
+ top: 0;
+ left: 0;
+ width: 205px;
+ height: 205px;
+ border-radius: 50%;
+ /* margin-left: 50px; */
+ animation: changecolor 10s infinite;
+ background-image: linear-gradient( rgb(191, 212, 32) , white);
+
+ filter: blur(10px);
+}
+@keyframes changecolor {
+    10% {
+        background-image: linear-gradient( rgb(191, 212, 32) , white);
+    }
+    20%{
+        background-image: linear-gradient( rgb(32, 212, 56) , white);
+    }
+    30%{
+        background-image: linear-gradient( rgb(212, 92, 32) , white);
+    }
+    40%{
+        background-image: linear-gradient( rgb(32, 212, 200) , white);
+    }
+    50%{
+        background-image: linear-gradient( rgb(47, 32, 212) , white);
+    }
+    80%{
+        background-image: linear-gradient( rgb(176, 32, 212) , white);
+    }
+    100%{
+        background-image: linear-gradient( rgb(212, 32, 89) , white);
+    }
+}
+@keyframes popup {
+  10% {
+    width: 200px;
+    border-radius: 50%;
+  }
+  20% {
+    width: 195px;
+    border-radius: 50%;
+  }
+  30% {
+    width: 195px;
+    border-radius: 50%;
+  }
+  40% {
+    width: 200px;
+    border-radius: 50%;
+  }
+  50% {
+    width: 195px;
+    border-radius: 50%;
+  }
+  60% {
+    width:195px;
+    border-radius: 50%;
+  }
+  70% {
+    width:200px;
+    border-radius: 50%;
+  }
+  80% {
+    width: 195px;
+    border-radius: 50%;
+  }
+  90% {
+    width: 195px;
+    border-radius: 50%;
+  }
+
+  100% {
+    width: 200px;
+    border-radius: 50%;
+    
+  }
+}
+
+
+
+.animations{
+    font-size: 24px;
+    animation: 1s movment;
+    
+}
+@keyframes movment {
+
+    40%{
+        position: relative;
+   font-size: 35px;     
+    }
+    70%{
+        position: relative;
+        font-size: 29px;     
+        
+    }
+    100% {
+        position: relative;
+
+   font-size: 24px;     
+     
+      
+    
+    }
+  }
