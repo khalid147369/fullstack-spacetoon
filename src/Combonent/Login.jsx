@@ -99,7 +99,7 @@ function Login() {
           </form>
           <div className=" absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
             you dont have account?
-            <Link className=" underline text-green-700  " to={"http://localhost:5173/signup"}>Sign up</Link>
+            <Link className=" underline text-green-700  " to={`${import.meta.env.VITE_FRONTSERVER}/signup`}>Sign up</Link>
           </div>
         </div>
       )}

@@ -49,7 +49,7 @@ function Spacepower() {
             return input === ""?item :item.title.toLowerCase().includes(input)
           }).map((ob) => {
           return (
-            <Link key={ob._id} to={`http://localhost:5173/SingleCard/${ob._id}`}><Box
+            <Link key={ob._id} to={`${import.meta.env.VITE_FRONTSERVER}/SingleCard/${ob._id}`}><Box
               key={ob.id}
               tit={ob.title}
               img={`http://localhost:3000/imgs/${ob.imgname}`}

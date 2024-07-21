@@ -1,11 +1,13 @@
 import Header from "./Combonent/Header";
+// import 'dotenv/config'
 import Box from "./Combonent/Box";
 import Search from "./Combonent/Search.jsx";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import CircularIndeterminate from "./Combonent/Spinar.jsx";
-import Cookie from "cookie-universal"
+import Cookie from "cookie-universal";
+
 import "./App.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,9 +17,9 @@ function App() {
   const [isactive, setisactive] = useState(true);
   const [input, setinput] = useState("");
   const [spinar, setspinar] = useState(true);
-  
-  const cookie = Cookie()
-  const token = cookie.get("token")
+
+  const cookie = Cookie();
+  const token = cookie.get("token");
   useEffect(() => {
     const fetchindata = async () => {
       try {
@@ -32,9 +34,8 @@ function App() {
     };
 
     fetchindata();
-    
   }, []);
-  
+  console.log( import.meta.env.VITE_FRONTSERVER);
   const checkactive = (active) => {
     //  if (active) {
     //   console.log(active)
@@ -54,37 +55,38 @@ function App() {
   //   // ---------------------+
   //   const length2 = audsrc.split("/");
   //   const audtit = length2[length2.length - 1];
-    // try {
-    //   const data = await axios
-    //     .post(
-    //       "http://localhost:3000/favorites",
-    //       {
-    //         name: tit,
-    //         image: imgtit,
-    //         audio: audtit,
-    //       },
-    //       { headers: { Authorization: `bearer ${token}` } }
-    //     )
-    //     .then((da) => console.log(da));
-    //   console.log(data);
-    // } catch (err) {
-    //   console.log(err);
-    // }
+  // try {
+  //   const data = await axios
+  //     .post(
+  //       "http://localhost:3000/favorites",
+  //       {
+  //         name: tit,
+  //         image: imgtit,
+  //         audio: audtit,
+  //       },
+  //       { headers: { Authorization: `bearer ${token}` } }
+  //     )
+  //     .then((da) => console.log(da));
+  //   console.log(data);
+  // } catch (err) {
+  //   console.log(err);
+  // }
 
-    // settoggle(!toggle);
+  // settoggle(!toggle);
 
-    // localStorage.setItem("issaved", toggle);
-    // const issaved = localStorage.getItem("issaved");
-    // // settoggle(issaved)
+  // localStorage.setItem("issaved", toggle);
+  // const issaved = localStorage.getItem("issaved");
+  // // settoggle(issaved)
   // };
   // const local = cookie.get("toast")
   // local?toast( cookie.get("toast")):""
-  const showcard =(id)=>{
-    <Link to={`SingleCard/${id}`}></Link>
-  }
+  const showcard = (id) => {
+    <Link to={`${import.meta.env.VITE_FRONTSERVER}/SingleCard/${id}`}></Link>;
+  };
+
   return (
     <div className={isactive ? "" : "cover"}>
-     <ToastContainer/>
+      <ToastContainer />
       <div className="  m-auto h-px ">
         <Header />
 
@@ -99,7 +101,7 @@ function App() {
               <CircularIndeterminate />
             </div>
           ) : (
-            dataFromdb 
+            dataFromdb
               .filter((item) => {
                 return input === ""
                   ? item
@@ -107,17 +109,17 @@ function App() {
               })
               .map((ob) => {
                 return (
-                  <Link key={ob._id} to={`http://localhost:5173/SingleCard/${ob._id}`}><Box
-                   
-                    tit={ob.title}
-                    img={`http://localhost:3000/imgs/${ob.imgname}`}
-                    audsrc={`http://localhost:3000/audio/${ob.audsrc}`}
-                    isactive={checkactive}
-                    card={ob}
-                    showcard={showcard}
-                    garbadge={false}
-                  /></Link>
-                  
+                  <Link key={ob._id} to={`${import.meta.env.VITE_FRONTSERVER}/SingleCard/${ob._id}`}>
+                    <Box
+                      tit={ob.title}
+                      img={`http://localhost:3000/imgs/${ob.imgname}`}
+                      audsrc={`http://localhost:3000/audio/${ob.audsrc}`}
+                      isactive={checkactive}
+                      card={ob}
+                      showcard={showcard}
+                      garbadge={false}
+                    />
+                  </Link>
                 );
               })
           )}
@@ -126,7 +128,6 @@ function App() {
         {/* <Box tit = "test"/> */}
       </div>
       {/* <h1>{isactive}</h1> */}
-    
     </div>
   );
 }

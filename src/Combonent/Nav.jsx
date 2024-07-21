@@ -150,7 +150,7 @@ export default function Nav() {
               onClick={() => {
                 width && settoggle(true);
               }}
-              to={"http://localhost:5173/"}
+              to={`${import.meta.env.VITE_FRONTSERVER}/`}
               className={pathname == "/" ? "nli" : ""}
             >
               <i className="icons fa-solid fa-house text-2xl"></i>
@@ -175,7 +175,7 @@ export default function Nav() {
                 width && settoggle(!toggle);
               }}
               className={pathname == "/spacepower" ? "nli" : ""}
-              to={"http://localhost:5173/spacepower"}
+              to={`${import.meta.env.VITE_FRONTSERVER}/spacepower`}
             >
               <img
                 className=" w-10 h-10 relative left-1  md:w-6 md:hidden"
@@ -186,7 +186,7 @@ export default function Nav() {
           </li>
         </div>
         <hr />
-        <NavLink className={pathname == "/contact" ? "nli    hover:border-b-2 " : ""} to={"http://localhost:5173/contact"}>
+        <NavLink className={pathname == "/contact" ? "nli    hover:border-b-2 " : ""} to={`${import.meta.env.VITE_FRONTSERVER}/contact`}>
           <li
             className="  flex flex-row-reverse justify-between gap-3 items-center py-3 md:py-0 px-5 md:px-0 "
             ref={favorites}
@@ -201,7 +201,7 @@ export default function Nav() {
           ref={favorites}
         >
           <NavLink
-            to={"http://localhost:5173/login/favorites"}
+            to={`${import.meta.env.VITE_FRONTSERVER}/login/favorites`}
             className={pathname == "/login/favorites" ? "nli" : ""}
           >
             <i className="icons fa-solid fa-star text-2xl"></i>
@@ -214,7 +214,7 @@ export default function Nav() {
             <NavLink
               className={"lastli"}
               onClick={handllogout}
-              to={"http://localhost:5173/login"}
+              to={`${import.meta.env.VITE_FRONTSERVER}/login`}
             >
               <i
                 className={

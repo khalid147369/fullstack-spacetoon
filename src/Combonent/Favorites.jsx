@@ -111,7 +111,7 @@ function Favorites() {
               .map((ob) => {
                 console.log(ob._id);
                 return (
-                  <Link key={ob._id} to={`http://localhost:5173/SingleCardfav/${ob._id}`}><Box
+                  <Link key={ob._id} to={`${import.meta.env.VITE_FRONTSERVER}/SingleCardfav/${ob._id}`}><Box
                     key={ob._id}
                     tit={ob.title}
                     img={`http://localhost:3000/imgs/${ob.imgname}`}
