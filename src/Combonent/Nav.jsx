@@ -82,10 +82,11 @@ export default function Nav() {
 
   const fetchdata = async () => {
     try {
-      await axios
+    const userdd =  await axios
         .get(`${import.meta.env.VITE_BACKSERVER}/login/success`, { withCredentials: true })
         .then((da) => {
           setuserdata(da.data);
+         console.log(userdd)
         });
 
       // .then(da=>console.log(da.data))
