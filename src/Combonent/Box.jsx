@@ -82,7 +82,7 @@ export default function Box({
       try {
         await axios
           .post(
-            "http://localhost:3000/favorites",
+            `${import.meta.env.VITE_BACKSERVER}/favorites`,
             { name: tit, image: imgtit, audio: audtit },
             { headers: { Authorization: `bearer ${token}` } }
           )
@@ -101,7 +101,7 @@ export default function Box({
       try {
         await axios
           .post(
-            "http://localhost:3000/favorites2",
+            `${import.meta.env.VITE_BACKSERVER}/favorites2`,
             { name: tit, image: imgtit, audio: audtit },
             config,
             { withCredentials: true }

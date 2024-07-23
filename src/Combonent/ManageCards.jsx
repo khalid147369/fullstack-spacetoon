@@ -23,7 +23,7 @@ function ManageCards(visible) {
     const fetchindata = async () => {
       try {
         await axios
-          .get("http://localhost:3000/spacetoon")
+          .get(`${import.meta.env.VITE_BACKSERVER}/spacetoon`)
           .then((da) => setdataFromdb(da.data));
       } catch (err) {
         console.log(err);
@@ -48,7 +48,7 @@ function ManageCards(visible) {
   };
   const deletecard = (id)=>{
 try{
-const dlt = axios.delete(`http://localhost:3000/dleteitem/${id}` ).then((da) => toast.success(da.data.message)).catch((err) => toast.error(err.response.data.message));
+const dlt = axios.delete(`${import.meta.env.VITE_BACKSERVER}/dleteitem/${id}` ).then((da) => toast.success(da.data.message)).catch((err) => toast.error(err.response.data.message));
 if (dlt) {
      setTimeout(()=>{ window.location.reload()},1000)
 }
@@ -84,8 +84,8 @@ if (dlt) {
                     <Box
                     key={ob._id}
                       tit={ob.title}
-                      img={`http://localhost:3000/imgs/${ob.imgname}`}
-                      audsrc={`http://localhost:3000/audio/${ob.audsrc}`}
+                      img={`${import.meta.env.VITE_BACKSERVER}/imgs/${ob.imgname}`}
+                      audsrc={`${import.meta.env.VITE_BACKSERVER}/audio/${ob.audsrc}`}
                       isactive={checkactive}
                       card={ob}
                       showcard={showcard}

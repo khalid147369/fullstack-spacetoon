@@ -48,7 +48,7 @@ export default function Addcard() {
       newform.append("image", file);
       newform.append("audio", aud);
       const data = axios
-        .post("http://localhost:3000/creatcard", newform)
+        .post(`${import.meta.env.VITE_BACKSERVER}/creatcard`, newform)
         .then((da) => setcard(da.status))
         .catch((err) => toast.error(err.response.data.error));
       // toast(err.response.data.error)

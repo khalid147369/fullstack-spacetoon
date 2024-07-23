@@ -24,7 +24,7 @@ const token = cookie.get("token")
       try {
         if (token) {
            await axios
-          .get(`http://localhost:3000/api/itemsfav/${id}`, {
+          .get(`${import.meta.env.VITE_BACKSERVER}/api/itemsfav/${id}`, {
             headers: { Authorization: `bearer ${token}` },
           })
           .then((data) => setItem(data.data));
@@ -37,7 +37,7 @@ const token = cookie.get("token")
               }
             };
             try{
-            await axios.get(`http://localhost:3000/api/itemsfavgoogle/${id}`,config, {
+            await axios.get(`${import.meta.env.VITE_BACKSERVER}/api/itemsfavgoogle/${id}`,config, {
               withCredentials:true
             }).then((data) => setItem(data.data));
             // .then(da=>console.log(da))
@@ -92,7 +92,7 @@ const token = cookie.get("token")
   const deletecard = async () => {
     if (token) {
         try{
-const fetch = await axios.delete(`http://localhost:3000/deletecard/${item._id}`, {
+const fetch = await axios.delete(`${import.meta.env.VITE_BACKSERVER}/deletecard/${item._id}`, {
       headers: { Authorization: `bearer ${token}` },
   }) 
     .then(da=>toast.success(da.data.message )).catch(err=>toast.error(err.data.message));
@@ -110,7 +110,7 @@ const fetch = await axios.delete(`http://localhost:3000/deletecard/${item._id}`,
         }
       };
       try{
-      await axios.delete(`http://localhost:3000/deletecard2/${item._id}`,config, {
+      await axios.delete(`${import.meta.env.VITE_BACKSERVER}/deletecard2/${item._id}`,config, {
         withCredentials:true
       }).then(da=>toast.success(da.data.message )).catch(err=>toast.error(err.data.message));
       setTimeout(()=>{ navigate("/login/favorites") },1000)
@@ -138,7 +138,7 @@ const fetch = await axios.delete(`http://localhost:3000/deletecard/${item._id}`,
           </div>
             <div className={isplay?"effecs":""}>
             <div ref={toncls} className=" cardimg ">
-            <img src={`http://localhost:3000/imgs/${item.imgname}`} />
+            <img src={`${import.meta.env.VITE_BACKSERVER}/imgs/${item.imgname}`} />
           </div>    
             </div>
           
@@ -168,7 +168,7 @@ const fetch = await axios.delete(`http://localhost:3000/deletecard/${item._id}`,
             onEnded={handleend}
               ref={rf}
               className=""
-              src={`http://localhost:3000/audio/${item.audsrc}`}
+              src={`${import.meta.env.VITE_BACKSERVER}/audio/${item.audsrc}`}
               type="audio/mp4"
             />
           </div>

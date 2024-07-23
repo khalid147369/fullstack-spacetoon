@@ -31,7 +31,7 @@ function Favorites() {
         if (token) {
           try {
           await axios
-          .get("http://localhost:3000/chousedfav", {
+          .get(`${import.meta.env.VITE_BACKSERVER}/chousedfav`, {
             headers: { Authorization: `bearer ${token}` },
           })
           .then((da) => setdataFromdb(da.data));
@@ -49,7 +49,7 @@ function Favorites() {
               }
             };
           await axios
-          .get("http://localhost:3000/chousedfav2",config, {
+          .get(`${import.meta.env.VITE_BACKSERVER}/chousedfav2`,config, {
             withCredentials:true
           })
           .then((da) => setdataFromdb(da.data));
@@ -114,8 +114,8 @@ function Favorites() {
                   <Link key={ob._id} to={`${import.meta.env.VITE_FRONTSERVER}/SingleCardfav/${ob._id}`}><Box
                     key={ob._id}
                     tit={ob.title}
-                    img={`http://localhost:3000/imgs/${ob.imgname}`}
-                    audsrc={`http://localhost:3000/audio/${ob.audsrc}`}
+                    img={`${import.meta.env.VITE_BACKSERVER}/imgs/${ob.imgname}`}
+                    audsrc={`${import.meta.env.VITE_BACKSERVER}/audio/${ob.audsrc}`}
                     isactive={checkactive}
                     hide={true}
                     hidegarbadge={true}

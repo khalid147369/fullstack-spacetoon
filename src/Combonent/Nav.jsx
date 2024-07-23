@@ -49,7 +49,7 @@ export default function Nav() {
     setthetoken("Log in");
   };
   const logoutgoogle = () => {
-    window.open("http://localhost:3000/logout", "_self");
+    window.open(`${import.meta.env.VITE_BACKSERVER}/logout`, "_self");
     cookie.remove("googleId");
   };
 
@@ -83,7 +83,7 @@ export default function Nav() {
   const fetchdata = async () => {
     try {
       await axios
-        .get("http://localhost:3000/login/success", { withCredentials: true })
+        .get(`${import.meta.env.VITE_BACKSERVER}/login/success`, { withCredentials: true })
         .then((da) => {
           setuserdata(da.data);
         });

@@ -20,7 +20,7 @@ function Login() {
 
     try {
       const data = await axios
-        .post("http://localhost:3000/logusers", {
+        .post(`${import.meta.env.VITE_BACKSERVER}/logusers`, {
           username: name,
           password: password,
         })
@@ -43,7 +43,7 @@ function Login() {
   const token = cookie.get("token");
 
   const loginwithgoogle = () => {
-    window.open("http://localhost:3000/auth/google/callback", "_self");
+    window.open(`${import.meta.env.VITE_BACKSERVER}/auth/google/callback`, "_self");
   };
 
   const googleId = cookie.get("googleId");

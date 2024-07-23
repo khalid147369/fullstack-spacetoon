@@ -12,7 +12,7 @@ function Spacepower() {
   useEffect(() => {
     const fetchingdata = ()=>{
       try{
-        axios.get("http://localhost:3000/spacepower")
+        axios.get(`${import.meta.env.VITE_BACKSERVER}/spacepower`)
       .then((da) => setdata(da.data)); 
       // .then(da=>console.log(da))
       }catch(err){
@@ -52,8 +52,8 @@ function Spacepower() {
             <Link key={ob._id} to={`${import.meta.env.VITE_FRONTSERVER}/SingleCard/${ob._id}`}><Box
               key={ob.id}
               tit={ob.title}
-              img={`http://localhost:3000/imgs/${ob.imgname}`}
-              audsrc={`http://localhost:3000/audio/${ob.audsrc}`}
+              img={`${import.meta.env.VITE_BACKSERVER}/imgs/${ob.imgname}`}
+              audsrc={`${import.meta.env.VITE_BACKSERVER}/audio/${ob.audsrc}`}
               isactive={checkactive}
             /></Link>
           );

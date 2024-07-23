@@ -13,7 +13,7 @@ function Signup() {
 
     try {
       await axios
-        .post("http://localhost:3000/users", {
+        .post(`${import.meta.env.VITE_BACKSERVER}/users`, {
           username: name,
           password: password,
         })

@@ -24,7 +24,7 @@ const SingleCard = () => {
     const fetchItem = async () => {
       try {
         await axios
-          .get(`http://localhost:3000/api/items/${id}`)
+          .get(`${import.meta.env.VITE_BACKSERVER}/api/items/${id}`)
           .then((data) => setItem(data.data));
         // .then(da=>console.log(da.data))
 
@@ -80,7 +80,7 @@ const SingleCard = () => {
       try {
         await axios
           .post(
-            "http://localhost:3000/favorites",
+            `${import.meta.env.VITE_BACKSERVER}/favorites`,
             { name: item.title, image: item.imgname, audio: item.audsrc },
             { headers: { Authorization: `bearer ${token}` } }
           )
@@ -99,7 +99,7 @@ const SingleCard = () => {
       try {
         await axios
           .post(
-            "http://localhost:3000/favorites2",
+            `${import.meta.env.VITE_BACKSERVER}/favorites2`,
             { name: item.title, image: item.imgname, audio: item.audsrc },
             config,
             { withCredentials: true }
@@ -131,7 +131,7 @@ const SingleCard = () => {
 
           <div className={isplay ? "effecs" : ""}>
             <div ref={toncls} className=" cardimg ">
-              <img src={`http://localhost:3000/imgs/${item.imgname}`} />
+              <img src={`${import.meta.env.VITE_BACKSERVER}/imgs/${item.imgname}`} />
             </div>
           </div>
 
@@ -161,7 +161,7 @@ const SingleCard = () => {
               onEnded={handleend}
               ref={rf}
               className=""
-              src={`http://localhost:3000/audio/${item.audsrc}`}
+              src={`${import.meta.env.VITE_BACKSERVER}/audio/${item.audsrc}`}
               type="audio/mp4"
             />
           </div>

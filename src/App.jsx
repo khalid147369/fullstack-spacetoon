@@ -24,7 +24,7 @@ function App() {
     const fetchindata = async () => {
       try {
         await axios
-          .get("http://localhost:3000/spacetoon")
+          .get(`${import.meta.env.VITE_BACKSERVER}/spacetoon`)
           .then((da) => setdataFromdb(da.data));
       } catch (err) {
         console.log(err);
@@ -37,49 +37,12 @@ function App() {
   }, []);
   console.log( import.meta.env.VITE_FRONTSERVER);
   const checkactive = (active) => {
-    //  if (active) {
-    //   console.log(active)
-    //  }else{
-    //   console.log(active)
-    //  }
     setisactive(active);
   };
-  //  checkactive()
+
   const handlechange = (e) => {
     setinput(e.target.value);
   };
-  // const handlsave = async () => {
-  //   const length = img.split("/");
-  //   const imgtit = length[length.length - 1];
-  //   console.log(imgtit);
-  //   // ---------------------+
-  //   const length2 = audsrc.split("/");
-  //   const audtit = length2[length2.length - 1];
-  // try {
-  //   const data = await axios
-  //     .post(
-  //       "http://localhost:3000/favorites",
-  //       {
-  //         name: tit,
-  //         image: imgtit,
-  //         audio: audtit,
-  //       },
-  //       { headers: { Authorization: `bearer ${token}` } }
-  //     )
-  //     .then((da) => console.log(da));
-  //   console.log(data);
-  // } catch (err) {
-  //   console.log(err);
-  // }
-
-  // settoggle(!toggle);
-
-  // localStorage.setItem("issaved", toggle);
-  // const issaved = localStorage.getItem("issaved");
-  // // settoggle(issaved)
-  // };
-  // const local = cookie.get("toast")
-  // local?toast( cookie.get("toast")):""
   const showcard = (id) => {
     <Link to={`${import.meta.env.VITE_FRONTSERVER}/SingleCard/${id}`}></Link>;
   };
@@ -112,8 +75,8 @@ function App() {
                   <Link key={ob._id} to={`${import.meta.env.VITE_FRONTSERVER}/SingleCard/${ob._id}`}>
                     <Box
                       tit={ob.title}
-                      img={`http://localhost:3000/imgs/${ob.imgname}`}
-                      audsrc={`http://localhost:3000/audio/${ob.audsrc}`}
+                      img={`${import.meta.env.VITE_BACKSERVER}/imgs/${ob.imgname}`}
+                      audsrc={`${import.meta.env.VITE_BACKSERVER}/audio/${ob.audsrc}`}
                       isactive={checkactive}
                       card={ob}
                       showcard={showcard}
@@ -124,10 +87,7 @@ function App() {
               })
           )}
         </div>
-
-        {/* <Box tit = "test"/> */}
       </div>
-      {/* <h1>{isactive}</h1> */}
     </div>
   );
 }
