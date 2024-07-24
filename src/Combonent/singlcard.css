@@ -13,8 +13,11 @@
 }
 @media (  max-width : 768px){
 .card{
-  /* width: 400px; */
-  width: 100%;
+ position: absolute;
+ top: 50%;
+ left: 10%;
+ transform: translateY(-50%);
+  width:400px ;
   height: calc(100vh - 250px);
 }
 }
