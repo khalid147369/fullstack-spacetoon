@@ -23,7 +23,7 @@ function ManageCards(visible) {
     const fetchindata = async () => {
       try {
         await axios
-          .get(`${import.meta.env.VITE_BACKSERVER}/spacetoon`)
+          .get(`${import.meta.env.VITE_BACKSERVER}/`)
           .then((da) => setdataFromdb(da.data));
       } catch (err) {
         console.log(err);
@@ -80,17 +80,17 @@ if (dlt) {
               .map((ob) => {
                 return (
    
+                  <Link key={ob._id} to={`/admin/delete/${ob._id}`} >  <Box
                   
-                    <Box
-                    key={ob._id}
-                      tit={ob.title}
-                      img={`${import.meta.env.VITE_BACKSERVER}/imgs/${ob.imgname}`}
-                      audsrc={`${import.meta.env.VITE_BACKSERVER}/audio/${ob.audsrc}`}
-                      isactive={checkactive}
-                      card={ob}
-                      showcard={showcard}
-                      deletecard={deletecard}
-                    />
+                    tit={ob.title}
+                    img={`${import.meta.env.VITE_BACKSERVER}/imgs/${ob.imgname}`}
+                    audsrc={`${import.meta.env.VITE_BACKSERVER}/audio/${ob.audsrc}`}
+                    isactive={checkactive}
+                    card={ob}
+                    showcard={showcard}
+                    deletecard={deletecard}
+                  /></Link>
+                  
                   
                 );
               })

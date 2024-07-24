@@ -13,6 +13,7 @@ import SingleCardFav from "./Combonent/SinglCardFav.jsx";
 import Favorites from "./Combonent/Favorites.jsx";
 import Footer from "./Combonent/Footer.jsx";
 import ManageCards from "./Combonent/ManageCards.jsx";
+import DeleteCard from "./Combonent/Deletecard.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -31,6 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/admin" element={<Signin />}>
           <Route path="admin" element={<Addcard />} />
           <Route path="manage" element={<ManageCards/>} />
+          <Route path="delete/:id" element={<DeleteCard/>} />
         </Route>
         <Route path="/singlecard/:id" element={<SingleCard/>}/>
         <Route path="/SingleCardfav/:id" element={<SingleCardFav/>}/>
