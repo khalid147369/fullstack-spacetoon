@@ -47,6 +47,8 @@ export default function Nav() {
   const handllogout = () => {
     cookie.remove("token");
     setthetoken("Log in");
+    ref2.current.style = "display:none ";
+    setbarr(!barr);
   };
   const logoutgoogle = () => {
     window.open(`${import.meta.env.VITE_BACKSERVER}/logout`, "_self");
@@ -82,11 +84,13 @@ export default function Nav() {
 
   const fetchdata = async () => {
     try {
-    const userdd =  await axios
-        .get(`${import.meta.env.VITE_BACKSERVER}/login/success`, { withCredentials: true })
+      const userdd = await axios
+        .get(`${import.meta.env.VITE_BACKSERVER}/login/success`, {
+          withCredentials: true,
+        })
         .then((da) => {
           setuserdata(da.data);
-         console.log(userdd)
+          console.log(userdd);
         });
 
       // .then(da=>console.log(da.data))
@@ -109,7 +113,10 @@ export default function Nav() {
     maxwidth && setactive(true);
   }, []);
   return (
-    <div style={{fontFamily:"Noto Sans, sans-serif"}} className="nav relative top-0 flex items-center justify-between  shadow-md">
+    <div
+      style={{ fontFamily: "Noto Sans, sans-serif" }}
+      className="nav relative top-0 flex items-center justify-between  shadow-md"
+    >
       <div>
         {storsp ? (
           <img className=" w-20" src={spacetoonlogo} alt="logo" />
@@ -187,7 +194,15 @@ export default function Nav() {
           </li>
         </div>
         <hr />
-        <NavLink className={pathname == "/contact" ? "nli pr-0   hover:border-b-2 " : ""} to={`${import.meta.env.VITE_FRONTSERVER}/contact`}>
+        <NavLink
+          onClick={() => {
+            (ref2.current.style = "display:none "), setbarr(!barr);
+          }}
+          className={
+            pathname == "/contact" ? "nli pr-0   hover:border-b-2 " : ""
+          }
+          to={`${import.meta.env.VITE_FRONTSERVER}/contact`}
+        >
           <li
             className="  flex flex-row-reverse justify-between gap-3 w-full items-center py-3 md:py-0 px-5 md:px-0 "
             ref={favorites}
@@ -202,6 +217,9 @@ export default function Nav() {
           ref={favorites}
         >
           <NavLink
+            onClick={() => {
+              (ref2.current.style = "display:none "), setbarr(!barr);
+            }}
             to={`${import.meta.env.VITE_FRONTSERVER}/login/favorites`}
             className={pathname == "/login/favorites" ? "nli" : ""}
           >
