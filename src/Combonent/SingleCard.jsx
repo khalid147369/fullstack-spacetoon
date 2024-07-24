@@ -113,9 +113,9 @@ const SingleCard = () => {
     }
   };
   return (
-    <div>
+    <div >
       <ToastContainer />
-      <div className="card">
+      <div className="card  ">
       <p onClick={()=>navigate("/")} className=" absolute right-2 md:right-8 top-2 cursor-pointer text-2xl">❌</p>
         <div className="cardcontainer ">
           <div className=" flex gap-10  ">
