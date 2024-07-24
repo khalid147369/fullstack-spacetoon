@@ -135,7 +135,7 @@ const SingleCard = () => {
             </div>
           </div>
 
-          <div className="controle  flex flex-col gap-4  w-52">
+          <div className="controle  ">
             <div className=" flex gap-4">
               <button
                 onClick={pauseaudio}

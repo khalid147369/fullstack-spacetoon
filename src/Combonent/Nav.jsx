@@ -109,7 +109,7 @@ export default function Nav() {
     maxwidth && setactive(true);
   }, []);
   return (
-    <div className="nav relative top-0 flex items-center justify-between">
+    <div className="nav relative top-0 flex items-center justify-between  shadow-md">
       <div>
         {storsp ? (
           <img className=" w-20" src={spacetoonlogo} alt="logo" />
