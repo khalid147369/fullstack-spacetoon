@@ -74,7 +74,7 @@ const token = cookie.get("token")
         try{
 await axios.delete(`${import.meta.env.VITE_BACKSERVER}/dleteitem/${item._id}`) 
     .then(da=>toast.success(da.data.message )).catch(err=>toast.error(err.data.message));
-
+      setTimeout(()=>{navigate("/admin/manage")},1000) 
     
   
     }catch(err){
@@ -88,7 +88,7 @@ await axios.delete(`${import.meta.env.VITE_BACKSERVER}/dleteitem/${item._id}`)
         <ToastContainer/>
        
       <div className="card">
-        <p onClick={()=>navigate("/login/favorites")} className=" absolute right-2 md:right-8 top-2 cursor-pointer text-2xl">❌</p>
+        <p onClick={()=>navigate("/admin/manage")} className=" absolute right-2 md:right-8 top-2 cursor-pointer text-2xl">❌</p>
         <div className="cardcontainer"> 
         <div className=" flex gap-10  ">
             <h1 className="  mt-5 mb-5 text-2xl "> {item.title}</h1>
