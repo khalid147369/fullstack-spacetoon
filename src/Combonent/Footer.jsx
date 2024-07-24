@@ -11,17 +11,17 @@ export default function Footer() {
   console.log(pathname);
 
   return (
-    <div>
-      <div className="flex justify-center gap-16 absolute transform top-28 left-1/2 -translate-x-1/2  ">
-        <ul className=" w-40 flex flex-col gap-5">
-          <li className="text-xl">khalid rabaaoui</li>
+    <div >
+      <div className="flex justify-center gap-10 md:gap-16 absolute transform  top-64 left-1/2 -translate-x-44  ">
+        <ul className=" w-40 flex flex-col gap-10">
+          <li className="text-2xl">khalid rabaaoui</li>
           <li> 🧑‍🎓 self lerning</li>
           <li>rabaaouikhalid@gmail.com</li>
         </ul>
         <div className="   w-1 h-30 bg-black  "></div>
         
-          <ul className=" w-40  flex flex-col gap-5">
-            <li className="text-xl">Skills</li>
+          <ul className=" w-40  flex flex-col gap-10">
+            <li className="text-2xl">Skills</li>
             <li className=" flex gap-2 items-center "><img className="w-4" src={js}/><p>java script</p></li>
             <li>mern-stack</li>
             <li className=" flex gap-2 items-center "><img className="w-4" src={react}/><p>react</p></li>
@@ -30,7 +30,7 @@ export default function Footer() {
         
         
         </div>
-        <div className=" absolute w-full bg-gradient-to-bl from-blue-900 to-blue-400 h-60 bottom-0">
+        <div className=" absolute w-full bg-gradient-to-bl from-blue-900 to-blue-400 h-60 -bottom-14">
           <div className=" absolute w-full h-fit top-12">
             <ul className="  flex items-center gap-3 justify-center ">
               <a href="mailto:rabaaouikhalid@gmail.com">
