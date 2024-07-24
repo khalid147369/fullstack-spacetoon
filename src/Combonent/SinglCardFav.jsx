@@ -123,7 +123,7 @@ const fetch = await axios.delete(`${import.meta.env.VITE_BACKSERVER}/deletecard/
    
   };
   return (
-    <div>
+    <div style={{ fontFamily: "Noto Kufi Arabic, sans-serif"}}>
         <ToastContainer/>
        
       <div className="card">

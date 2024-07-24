@@ -113,7 +113,7 @@ const SingleCard = () => {
     }
   };
   return (
-    <div className="  absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  " >
+    <div style={{ fontFamily: "Noto Kufi Arabic, sans-serif"}} className="  absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  " >
       <ToastContainer />
       <div className="card   ">
       <p onClick={()=>navigate("/")} className=" absolute right-2 md:right-8 top-2 cursor-pointer text-2xl">❌</p>
@@ -125,7 +125,7 @@ const SingleCard = () => {
                 onClick={handlsave}
                 className={`${animation} text-yellow-400 cursor-pointer fa-solid fa-star  text-2xl `}
               ></i>
-              <p className="text-2xl">safe</p>
+              <p className="text-2xl">save</p>
             </div>
           </div>
 

@@ -109,7 +109,7 @@ export default function Nav() {
     maxwidth && setactive(true);
   }, []);
   return (
-    <div className="nav relative top-0 flex items-center justify-between  shadow-md">
+    <div style={{fontFamily:"Noto Sans, sans-serif"}} className="nav relative top-0 flex items-center justify-between  shadow-md">
       <div>
         {storsp ? (
           <img className=" w-20" src={spacetoonlogo} alt="logo" />
@@ -187,9 +187,9 @@ export default function Nav() {
           </li>
         </div>
         <hr />
-        <NavLink className={pathname == "/contact" ? "nli    hover:border-b-2 " : ""} to={`${import.meta.env.VITE_FRONTSERVER}/contact`}>
+        <NavLink className={pathname == "/contact" ? "nli pr-0   hover:border-b-2 " : ""} to={`${import.meta.env.VITE_FRONTSERVER}/contact`}>
           <li
-            className="  flex flex-row-reverse justify-between gap-3 items-center py-3 md:py-0 px-5 md:px-0 "
+            className="  flex flex-row-reverse justify-between gap-3 w-full items-center py-3 md:py-0 px-5 md:px-0 "
             ref={favorites}
           >
             <i className="icons fa-solid fa-address-card text-2xl"></i>

@@ -14,15 +14,15 @@ export default function Footer() {
     <div >
       <div className="flex justify-center gap-10 md:gap-16 absolute transform  top-64 left-1/2 -translate-x-44  ">
         <ul className=" w-40 flex flex-col gap-10">
-          <li className="text-2xl">khalid rabaaoui</li>
+          <li className="text-2xl border-b border-black">khalid rabaaoui</li>
           <li> 🧑‍🎓 self lerning</li>
           <li>rabaaouikhalid@gmail.com</li>
         </ul>
         <div className="   w-1 h-30 bg-black  "></div>
         
-          <ul className=" w-40  flex flex-col gap-10">
-            <li className="text-2xl">Skills</li>
-            <li className=" flex gap-2 items-center "><img className="w-4" src={js}/><p>java script</p></li>
+          <ul style={{width:"fit-content"}} className=" flex flex-col gap-10">
+            <li className="text-2xl py-4 border-b border-black">Skills</li>
+            <li className=" flex gap-2 items-center "><img className="w-4" src={js}/><p style={{ width:"100px"}}>java script</p></li>
             <li>mern-stack</li>
             <li className=" flex gap-2 items-center "><img className="w-4" src={react}/><p>react</p></li>
 

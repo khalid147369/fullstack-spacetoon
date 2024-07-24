@@ -5,8 +5,9 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 500px;
-  height: calc(100vh - 57.14px) ;
+  width: 500px;
+  top: 28px;
+  height: 90vh;
   /* border-radius:  0 0 5px; */
   background-image: linear-gradient(60deg, #091428, #1c52bc, #96bef7);
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);

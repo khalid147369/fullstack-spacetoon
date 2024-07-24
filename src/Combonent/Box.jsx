@@ -119,7 +119,7 @@ export default function Box({
   };
 
   return (
-    <div className={isVisable ? "box " : "newbox"}>
+    <div style={{ fontFamily: "Noto Kufi Arabic, sans-serif"}} className={isVisable ? "box " : "newbox"}>
       {/* <ToastContainer  /> */}
       <div className=" flex items-center gap-4">
       {garbadge?<i onClick={()=>{deletecard(card._id)}} className="fa-solid fa-trash text-xl text-red-500"></i>:""}
